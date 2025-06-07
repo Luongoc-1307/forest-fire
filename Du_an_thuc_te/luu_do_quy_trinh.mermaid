@@ -1,0 +1,47 @@
+flowchart TD
+    A[/"Thu thập, xây dựng bộ dữ liệu đầu vào của mô hình dự báo nguy cơ cháy rừng"/] --> B["Nguồn dữ liệu"]
+    B --> C[("Dữ liệu viễn thám")] & D[("Mô hình số độ cao (DEM)")] & E[("Dữ liệu khí tượng")]
+    C --> F["Ảnh Sentinel-2"] & LST["Nhiệt độ bề mặt (MODIS)"]
+    C --> FireP["Dữ liệu điểm cháy (MODIS)"]
+    F --> NDVI[/"NDVI"/] & NDWI[/"NDWI"/] & LSWI[/"LSWI"/] & EVI[/"EVI"/] & SAVI[/"SAVI"/] & NBR[/"NBR"/] & NDMI[/"NDMI"/]
+    LST --> VCI[/"VCI"/] & TCI[/"TCI"/]
+    LST --> Q{{Mô hình hóa nguy cơ cháy rừng}}
+    D --> I[/"Hướng sườn"/] & J[/"Góc dốc"/] & K[/"Độ cao"/]
+    E --> N[/"Tốc độ gió"/] & O[/"Lượng mưa"/]
+    NDVI --> Q
+    NDWI --> Q
+    LSWI --> Q
+    EVI --> Q
+    SAVI --> Q
+    NBR --> Q
+    NDMI --> Q
+    VCI --> Q
+    TCI --> Q
+    I --> Q
+    J --> Q
+    K --> Q
+    N --> Q
+    O --> Q
+    Q --> R[["Random Forest"]] & S[["Gradient Tree Boosting"]]
+    FireP -- "Tạo nhãn đánh giá" --> T{{Đánh giá độ chính xác và lựa chọn mô hình dự báo nguy cơ cháy rừng}}
+    R --> T
+    S --> T
+    T --> U(["Bản đồ dự báo nguy cơ cháy rừng"])
+    
+    classDef start fill:#f9f9f9,stroke:#333,stroke-width:1px
+    classDef process fill:#e6f3ff,stroke:#333,stroke-width:1px
+    classDef data fill:#fffbe6,stroke:#333,stroke-width:1px
+    classDef source fill:#f0f0f0,stroke:#333,stroke-width:1px
+    classDef model fill:#e6fff7,stroke:#333,stroke-width:1px
+    classDef evaluate fill:#ffe6e6,stroke:#333,stroke-width:1px
+    classDef result fill:#ffcccc,stroke:#333,stroke-width:1px
+    
+    class A start
+    class B source
+    class C,D,E source
+    class F,LST,FireP data
+    class NDVI,NDWI,LSWI,EVI,SAVI,NBR,NDMI,VCI,TCI,I,J,K,N,O data
+    class Q process
+    class R,S model
+    class T evaluate
+    class U result
