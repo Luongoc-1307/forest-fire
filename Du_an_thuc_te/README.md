@@ -256,9 +256,9 @@ Dự án này được cấp phép theo Giấy phép MIT. Xem chi tiết tại t
 
 ## Liên hệ
 
-Ninh Hải Đăng - [ninhhaidang.fet@gmail.com](mailto:ninhhaidang.fet@gmail.com)
+Ninh Hải Đăng - [luongoc130603@gmail.com](mailto:luongoc130603@gmail.com)
 
-Link dự án: [https://github.com/ninhhaidang/GiaLai-forest-fire](https://github.com/ninhhaidang/GiaLai-forest-fire)
+Link dự án: [https://github.com/Luongoc-1307/forest-fire](https://github.com/Luongoc-1307/forest-fire)
 
 ---
 
